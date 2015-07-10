@@ -1,0 +1,8 @@
+# Default behaviour: convert line endings to LF (Unix-style) on checkout.
+* text eol=lf
+
+# Explicit declarations of filetypes used in the project.
+*.js text eol=lf
+*.tex text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
