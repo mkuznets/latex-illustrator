@@ -27,7 +27,7 @@ if(latexcode!=null)
   // add latex header etc. to create a complete latex document
   var latexfile=new File(temppath+'\\latex2illustrator.tex');
   latexfile.open("w");
-  latexfile.writeln("\\documentclass[11pt]{article}");
+  latexfile.writeln("\\documentclass{standalone}");
   // add or remove additional latex packages here
   latexfile.writeln("\\usepackage{amsmath}");
   latexfile.writeln("\\usepackage{amssymb}");
@@ -65,7 +65,7 @@ if(latexcode!=null)
     // items to the main group and skip the last item which is the page frame
     for( var i=grp.pageItems[0].pageItems.length-1; --i>=0; )
      grp.pageItems[0].pageItems[i].move(grp,ElementPlacement.PLACEATEND);
-    grp.pageItems[0].remove();
+    grp.pageItems[1].remove();
     // Move the imported objects to the center of the current view.
     grp.translate(app.activeDocument.activeView.centerPoint[0]-grp.left, app.activeDocument.activeView.centerPoint[1]-grp.top);
     }
