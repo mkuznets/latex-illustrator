@@ -63,7 +63,7 @@ if(latexcode!=null)
     var grp=app.activeDocument.activeLayer.groupItems.createFromFile(pdffile);
     // The imported objects are grouped twice. Now move the subgroup
     // items to the main group and skip the last item which is the page frame
-    for( var i=grp.pageItems[0].pageItems.length-1; --i>=0; )
+    for( var i=grp.pageItems[0].pageItems.length; --i>=0; )
      grp.pageItems[0].pageItems[i].move(grp,ElementPlacement.PLACEATEND);
     grp.pageItems[1].remove();
     // Move the imported objects to the center of the current view.
