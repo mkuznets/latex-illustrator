@@ -65,7 +65,11 @@ if(latexcode!=null)
     // items to the main group and skip the last item which is the page frame
     for( var i=grp.pageItems[0].pageItems.length; --i>=0; )
      grp.pageItems[0].pageItems[i].move(grp,ElementPlacement.PLACEATEND);
-    grp.pageItems[1].remove();
+
+    var last = grp.pageItems.length - 1;
+    if (last >= 0 && grp.pageItems[last].typename == 'PathItem')
+        grp.pageItems[last].remove();
+
     // Move the imported objects to the center of the current view.
     grp.translate(app.activeDocument.activeView.centerPoint[0]-grp.left, app.activeDocument.activeView.centerPoint[1]-grp.top);
     }
